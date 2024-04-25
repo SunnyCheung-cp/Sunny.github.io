@@ -143,7 +143,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-clvexs08x0004gcp1cw0i5mc8" class="article article-type-post" itemscope
+    <article id="post-clvey3ppl00066cp15oxq1e02" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -299,7 +299,9 @@
 <li>清除阶段（Sweeping Phase）：遍历整个内存空间，找到未被标记的对象，然后将它们所占用的内存释放掉。<br>这个算法的一个优点是它可以处理循环引用的情况，因为只要对象是可达的，它们就会被标记，即使它们之间存在相互引用。</li>
 </ol>
 <p>下面是一个简单的JavaScript例子，演示了标记清除算法的基本原理：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 创建一个对象</span></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Object 1&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建另一个对象，并让它引用第一个对象</span></span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Object 2&#x27;</span>,</span><br><span class="line">    <span class="attr">ref</span>: obj1</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除对第一个对象的引用</span></span><br><span class="line">obj1 = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在，只有obj2仍然是可访问的对象</span></span><br><span class="line"><span class="comment">// 标记清除算法会标记obj2和obj1，因为它们是相互引用的</span></span><br><span class="line"><span class="comment">// 其他没有被引用的对象会在清除阶段被释放</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行垃圾回收，清除没有标记的对象</span></span><br><span class="line"><span class="comment">// 此时，obj1已经被标记为null，而obj2被标记为可达，因此只有obj2会被保留</span></span><br><span class="line"><span class="comment">// obj1会被清除</span></span><br><span class="line">在这个例子中，obj1和obj2相互引用，但是当obj1被设置为<span class="literal">null</span>后，obj1变得不可达，因此在标记清除算法的标记阶段，它会被标记为待清除的对象，最终在清除阶段被释放。</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 创建一个对象</span></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Object 1&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建另一个对象，并让它引用第一个对象</span></span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;Object 2&#x27;</span>,</span><br><span class="line">    <span class="attr">ref</span>: obj1</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除对第一个对象的引用</span></span><br><span class="line">obj1 = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在，只有obj2仍然是可访问的对象</span></span><br><span class="line"><span class="comment">// 标记清除算法会标记obj2和obj1，因为它们是相互引用的</span></span><br><span class="line"><span class="comment">// 其他没有被引用的对象会在清除阶段被释放</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行垃圾回收，清除没有标记的对象</span></span><br><span class="line"><span class="comment">// 此时，obj1已经被标记为null，而obj2被标记为可达，因此只有obj2会被保留</span></span><br><span class="line"><span class="comment">// obj1会被清除</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，obj1和obj2相互引用，但是当obj1被设置为null后，obj1变得不可达，因此在标记清除算法的标记阶段，它会被标记为待清除的对象，最终在清除阶段被释放。</p>
 
         </div>
 
@@ -318,11 +320,11 @@
     
 <nav class="article-nav">
   
-    <a href="/2024/04/23/css/common-css/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">下一篇</div>
+    <a href="/2024/04/23/html/common-tags/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-caption">次の記事</div>
       <div class="article-nav-title">
         
-          常用css属性
+          HTML 标签
         
       </div>
     </a>
@@ -394,11 +396,11 @@
       <ul>
         
           <li>
-            <a href="/2024/04/23/html/common-tags/">HTML 标签</a>
+            <a href="/2024/04/23/css/common-css/">常用css属性</a>
           </li>
         
           <li>
-            <a href="/2024/04/23/css/common-css/">常用css属性</a>
+            <a href="/2024/04/23/html/common-tags/">HTML 标签</a>
           </li>
         
           <li>

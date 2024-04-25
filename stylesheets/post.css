@@ -184,8 +184,8 @@
 .post-inner-html table {
 	display: table;
 	padding: 0;
-	margin-left: auto;
-	margin-right: auto;
+	/* margin-left: auto;
+	margin-right: auto; */
 	min-width: 336px;
 	border-collapse: collapse;
 	border-spacing: 0;
