@@ -127,58 +127,6 @@
   
     
       <article
-id="post-css/common-css"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2024/04/23/css/common-css/">常用css属性</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>CSS（Cascading Style Sheets）是用于样式化网页的样式表语言。它定义了网页元素的外观和布局，使得网页可以更具吸引力和易读性。以下是一份 CSS 大全，包含了各种 CSS 属性及其用法：</p>
-<h2 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h2><ul>
-<li>color：定义文本颜色。</li>
-<li>font-family：定义字体系列。</li>
-<li>font-size：定义字体大小。</li>
-</ul>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2024-04-22T16:00:00.000Z" itemprop="datePublished">2024-04-23</time>
-</div>
-    
-        <div class="article-category">
-        <a class="article-category-link" href="/categories/css/">css</a>
-        </div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
 id="post-html/common-tags"
 class="article article-type-post"
 >
@@ -231,6 +179,58 @@ class="article article-type-post"
   
     
       <article
+id="post-css/common-css"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2024/04/23/css/common-css/">常用css属性</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>CSS（Cascading Style Sheets）是用于样式化网页的样式表语言。它定义了网页元素的外观和布局，使得网页可以更具吸引力和易读性。以下是一份 CSS 大全，包含了各种 CSS 属性及其用法：</p>
+<h2 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h2><ul>
+<li>color：定义文本颜色。</li>
+<li>font-family：定义字体系列。</li>
+<li>font-size：定义字体大小。</li>
+</ul>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2024-04-22T16:00:00.000Z" itemprop="datePublished">2024-04-23</time>
+</div>
+    
+        <div class="article-category">
+        <a class="article-category-link" href="/categories/css/">css</a>
+        </div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
 id="post-javascript/advanced-series/execution-context"
 class="article article-type-post"
 >
@@ -250,137 +250,6 @@ class="article article-type-post"
 <p>在看这篇文章之前，请确保堆内存空间有一定的理解</p>
 </blockquote>
 <h2 id="JavaScript是如何被执行的"><a href="#JavaScript是如何被执行的" class="headerlink" title="JavaScript是如何被执行的"></a>JavaScript是如何被执行的</h2><p>你或许不知道，浏览器并不理解我们在应用中编写的高级JavaScript代码。代码需要被转换成浏览器和计算机能够理解的格式——机器码。<br>浏览器在读取HTML时，如果遇到了<code>&lt;script&gt;</code> 标签或包含JavaScript代码的属性如onClick，会发送给JavaScript引擎。<br>浏览器的JavaScript引擎会创造一个特殊的环境来处理这些JavaScript代码的转换和执行。这个特殊的环境被称为<code>执行上下文</code>。</p>
-<h2 id="JavaScript中有两种执行上下文"><a href="#JavaScript中有两种执行上下文" class="headerlink" title="JavaScript中有两种执行上下文"></a>JavaScript中有两种执行上下文</h2><ol>
-<li>全局执行上下文（Global Execution Context）：整个 JavaScript 程序运行时的默认执行上下文。全局执行上下文在程序启动时创建，并且在程序结束时被销毁。全局执行上下文只有一个，它包含了全局作用域中的变量和函数。</li>
-<li>函数执行上下文（Function Execution Context）：每次调用函数时都会创建一个新的函数执行上下文，用于执行函数内部的代码。函数执行上下文在函数调用时动态创建，并且在函数执行完成后被销毁。每个函数调用都会创建一个新的函数执行上下文，形成了多个嵌套的执行上下文。</li>
-<li>Eval 函数执行上下文（Eval Function Execution Context）：通过 eval() 函数执行的代码会在特殊的执行上下文中运行，称为 Eval 函数执行上下文。</li>
-</ol>
-<blockquote>
-<p>Eval 函数执行上下文可以忽略不计</p>
-</blockquote>
-<p>每当 JavaScript 代码执行时，都会创建一个对应的执行上下文，并被添加到执行上下文栈（Execution Context Stack）中。执行上下文栈遵循后进先出（LIFO）的原则，即最后创建的执行上下文最先执行，执行完成后会从栈中弹出。</p>
-<p>相信看到这里会很迷惑，所以执行上下文到底是什么东西， 我们来举个例子说明</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> globalVar = <span class="string">&quot;I am a global variable&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">globalFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(globalVar);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">globalFunction</span>(); <span class="comment">// 输出 &quot;I am a global variable&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">outerFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> outerVar = <span class="string">&quot;I am an outer variable&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">innerFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(outerVar);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">innerFunction</span>(); <span class="comment">// 输出 &quot;I am an outer variable&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">outerFunction</span>();</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>第一步：<ul>
-<li><strong>全局执行上下文</strong>进栈, <strong>全局执行上下文</strong>入栈之后，其中的可执行代码开始执行</li>
-</ul>
-</li>
-<li>第二步：<ul>
-<li>当控制器遇到<strong>globalFunction()</strong>, 开始创建<strong>globalFunction执行上下文</strong>, <strong>globalFunction执行上下文</strong>入栈,</li>
-</ul>
-</li>
-<li>第三步：<ul>
-<li><strong>globalFunction</strong>没有其他能生成执行上下文的情况，<strong>globalFunction执行上下文</strong>出栈</li>
-</ul>
-</li>
-<li>第四步：<ul>
-<li>当控制器遇到<strong>outerFunction()</strong>, 开始创建<strong>outerFunction执行上下文</strong>,<strong>outerFunction执行上下文</strong>入栈</li>
-</ul>
-</li>
-<li>第五步：<ul>
-<li>当控制器遇到<strong>innerFunction()</strong>, 开始创建<strong>innerFunction执行上下文</strong>,<strong>innerFunction执行上下文</strong>入栈</li>
-</ul>
-</li>
-<li>第六步：<ul>
-<li><strong>innerFunction</strong>没有其他能生成执行上下文的情况，<strong>innerFunction执行上下文</strong>出栈</li>
-</ul>
-</li>
-<li>第七步：<ul>
-<li><strong>outerFunction</strong>没有其他能生成执行上下文的情况，<strong>outerFunction执行上下文</strong>出栈</li>
-</ul>
-</li>
-</ol>
-<p>当<strong>outerFunction</strong>出栈后，执行上下文中只剩下全局执行上下文了, 在浏览器窗口关闭后，全局执行上下文出栈</p>
-<p><img src="/../../../images/execution-context/%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F.png" alt="image"></p>
-<h2 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a>变量对象</h2><p>执行上下文的生命周期包括创建、执行和销毁三个阶段，这些阶段分别描述了执行上下文在代码执行过程中的行为和状态。</p>
-<ol>
-<li>创建阶段：</li>
-</ol>
-<ul>
-<li>在这个阶段中，执行上下文会分别创建变量对象，建立作用域链，以及确定this的指向。</li>
-</ul>
-<ol start="2">
-<li>执行阶段：</li>
-</ol>
-<ul>
-<li>创建完成之后，就会开始执行代码，这个时候，会完成变量赋值，函数引用，以及执行其他代码。</li>
-</ul>
-<ol start="3">
-<li>销毁阶段：</li>
-</ol>
-<ul>
-<li>出栈：当执行上下文中的代码执行完成后，执行上下文会从执行上下文栈中弹出，被销毁。这个过程称为出栈。</li>
-<li>释放内存：执行上下文被销毁时，其中的变量对象所占用的内存会被释放，变量和函数声明也会被移除。</li>
-<li>回收资源：在销毁阶段，JavaScript 引擎会进行垃圾回收，清理不再需要的资源，以释放内存。</li>
-</ul>
-<p>对于理解Javascript，执行上下文极为重要，因为其中涉及了变量对象，作用域链，this的指向</p>
-<h3 id="创建变量对象（Variable-Object）"><a href="#创建变量对象（Variable-Object）" class="headerlink" title="创建变量对象（Variable Object）"></a>创建变量对象（Variable Object）</h3><p>变量对象的创建，依次经历了以下几个过程。</p>
-<ol>
-<li>建立arguments对象。检查当前上下文中的参数，建立该对象下的属性与属性值。</li>
-<li>检查当前上下文的函数声明，也就是使用function关键字声明的函数。在变量对象中以函数名建立一个属性，属性值为指向该函数所在内存地址的引用。如果函数名的属性已经存在，那么该属性将会被新的引用所覆盖。</li>
-<li>检查当前上下文中的变量声明，每找到一个变量声明，就在变量对象中以变量名建立一个属性，属性值为undefined。如果该变量名的属性已经存在，为了防止同名的函数被修改为undefined，则会直接跳过，原属性值不会被修改。</li>
-</ol>
-<h3 id="全局执行上下文中的变量对象"><a href="#全局执行上下文中的变量对象" class="headerlink" title="全局执行上下文中的变量对象"></a>全局执行上下文中的变量对象</h3><p>在全局执行上下文中，变量对象是全局对象（比如浏览器环境中的 window 对象），它包含了全局作用域中的变量和函数声明。</p>
-<ul>
-<li>创建过程：</li>
-</ul>
-<ol>
-<li>创建全局对象（例如浏览器环境中的 window 对象）。</li>
-<li>将全局变量和函数声明添加到全局对象中。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> globalVar = <span class="string">&quot;I am a global variable&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">globalFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;I am a global function&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在全局执行上下文中，全局对象包含了 globalVar 变量和 globalFunction 函数</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="函数执行上下文中的变量对象（活动对象）"><a href="#函数执行上下文中的变量对象（活动对象）" class="headerlink" title="函数执行上下文中的变量对象（活动对象）"></a>函数执行上下文中的变量对象（活动对象）</h3><p>在函数执行上下文中，变量对象是活动对象，它包含了函数的形参、函数声明、变量声明和 arguments 对象。</p>
-<ul>
-<li>创建过程：</li>
-</ul>
-<ol>
-<li>创建活动对象。</li>
-<li>将函数的形参、函数声明和变量声明添加到活动对象中。</li>
-<li>在 arguments 对象中存储实参信息（仅适用于函数执行上下文）。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outerFunction</span>(<span class="params">outerParam</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> outerVar = <span class="string">&quot;I am an outer variable&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">innerFunction</span>(<span class="params">innerParam</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> innerVar = <span class="string">&quot;I am an inner variable&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">innerFunction</span>(<span class="string">&quot;innerParamValue&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 在 outerFunction 执行上下文中，</span></span><br><span class="line">    <span class="comment">// 活动对象包含了 outerParam 形参、outerVar 变量、innerFunction 函数声明和 arguments 对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h2><p>变量提升（Hoisting）是 JavaScript 中的一种特性，指的是在代码执行之前，JavaScript 引擎会将变量和函数声明移动到它们所在作用域的顶部。这意味着在代码中可以在声明之前使用这些变量和函数，而不会导致 ReferenceError 错误。<br>然而，赋值操作不会被提升，只有声明会被提升。（重点，重点，重点）</p>
-<p>在变量提升过程中，JavaScript 引擎会将以下内容提升至作用域的顶部：</p>
-<ul>
-<li>变量声明：使用 var 关键字声明的变量会被提升。它们的初始化会留在原来的位置，但是变量名会被添加到作用域的顶部。这时变量的值会被赋予 undefined。</li>
-<li>函数声明：使用函数声明语法（如 function functionName() {}）声明的函数会被整体提升到作用域的顶部，因此可以在声明之前调用这些函数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myVar); <span class="comment">// 输出 undefined</span></span><br><span class="line"><span class="keyword">var</span> myVar = <span class="string">&quot;I am a variable&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">myFunction</span>(); <span class="comment">// 输出 &quot;I am a function&quot;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;I am a function&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在上面的例子中，myVar 变量和 myFunction 函数都会被提升到作用域的顶部，因此可以在声明之前使用它们。但需要注意的是，只有声明被提升，赋值操作并不会被提升。</p>
-<p>变量提升可以使得代码在视觉上看起来与执行顺序不一致，因此在编写 JavaScript 代码时，建议始终将变量和函数的声明放在作用域的顶部，以提高代码的可读性和可维护性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;I am a function&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myFunction = <span class="string">&#x27;not a function&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myFunction); </span><br></pre></td></tr></table></figure>
-
-<p>这里相信很多人都能有正确的答案： not a function</p>
-<p>我们再来看看这个例子， 然后思考一下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myFunction); </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;I am a function&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myFunction = <span class="string">&#x27;not a function&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>答案是： <code>function myFunction() &#123; console.log(&quot;I am a function&quot;); &#125;</code>, 是不是和你的答案一致？</p>
-<p>我们回顾一下变量对象创建过程第2条，遇到function关键字声明的函数。在变量对象中以函数名建立一个属性</p>
-<p>所以执行顺序是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 首先将所有函数声明放入变量对象中</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;I am a function&quot;</span>) &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其次将所有变量声明放入变量对象中，但是因为foo已经存在同名函数，因此此时会跳过undefined的赋值</span></span><br><span class="line"><span class="comment">// var myFunction = undefined;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 然后开始执行阶段代码的执行</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(myFunction); <span class="comment">// function myFunction</span></span><br><span class="line">myFunction = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-
-<p>注意，函数声明会比var声明优先级更高一点。可以看看这个案例</p>
-<h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">bar</span>());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">myFunction</span>();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建过程</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// VO 为 Variable Object的缩写，即变量对象</span></span><br><span class="line">testEC = &#123;</span><br><span class="line">    <span class="attr">VO</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable constant_">VO</span> = &#123;</span><br><span class="line">  <span class="attr">arguments</span>: &#123;...&#125;,</span><br><span class="line">  <span class="attr">bar</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">bar</span> <span class="attr">reference</span>&gt;</span>,  // 表示bar的地址引用</span></span><br><span class="line"><span class="language-xml">  a: undefined</span></span><br><span class="line"><span class="language-xml">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>未进入执行阶段之前，变量对象中的属性都不能访问！但是进入执行阶段之后，变量对象转变为了活动对象，里面的属性都能被访问了，然后开始进行执行阶段的操作。</p>
-<ul>
-<li>执行过程</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// VO 为 Active Object的缩写，即活动对象</span></span><br><span class="line"><span class="variable constant_">VO</span> -&gt;  <span class="variable constant_">AO</span>  </span><br><span class="line"><span class="variable constant_">AO</span> = &#123;</span><br><span class="line">  <span class="attr">arguments</span>: &#123;...&#125;,</span><br><span class="line">  <span class="attr">bar</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">bar</span> <span class="attr">reference</span>&gt;</span>,</span></span><br><span class="line"><span class="language-xml">  a: 1,</span></span><br><span class="line"><span class="language-xml">  this: Window</span></span><br><span class="line"><span class="language-xml">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>所以执行顺序就会变成</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> a;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">bar</span>());</span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">test</span>();</span><br></pre></td></tr></table></figure>
-
         
     </div>
     </div>
@@ -509,11 +378,11 @@ class="article article-type-post"
       <ul>
         
           <li>
-            <a href="/2024/04/23/css/common-css/">常用css属性</a>
+            <a href="/2024/04/23/html/common-tags/">HTML 标签</a>
           </li>
         
           <li>
-            <a href="/2024/04/23/html/common-tags/">HTML 标签</a>
+            <a href="/2024/04/23/css/common-css/">常用css属性</a>
           </li>
         
           <li>
