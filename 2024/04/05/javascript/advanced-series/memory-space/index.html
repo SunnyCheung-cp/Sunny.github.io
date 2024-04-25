@@ -143,7 +143,7 @@
             <section class="inner">
                 <section class="inner-main">
                     <div class="post">
-    <article id="post-clvexasv80006pop11p0p0lay" class="article article-type-post" itemscope
+    <article id="post-clvexs08x0004gcp1cw0i5mc8" class="article article-type-post" itemscope
     itemprop="blogPost">
 
     <div class="article-inner">
@@ -196,17 +196,17 @@
 <h2 id="栈数据结构"><a href="#栈数据结构" class="headerlink" title="栈数据结构"></a>栈数据结构</h2><p>栈（stack）又名堆栈，它是一种运算受限的线性表。限定仅在表尾进行插入和删除操作的线性表，是一种<code>先进后出（FILO）</code>的数据结构，</p>
 <p>允许进行插入和删除操作的一端称为<code>栈顶(top)</code>，另一端为<code>栈底(bottom)</code>；栈底固定，而栈顶浮动；栈中元素个数为零时称为空栈。插入一般称为<code>进栈（PUSH）</code>，删除则称为<code>退栈（POP）</code>。</p>
 <p>栈的特点可以看成是一个桶，往桶里面装东西，取东西都是从上面进行的，最先放进去的要最后才能取出来：</p>
-<p><img src="https://note.youdao.com/yws/res/4696/WEBRESOURCEeca626a2a8a4e20f413d890d81a8b356" alt="image"></p>
+<p><img src="/../../../images/memory-space/stack.png" alt="image"></p>
 <h2 id="堆数据结构"><a href="#堆数据结构" class="headerlink" title="堆数据结构"></a>堆数据结构</h2><p><code>堆（heap）</code>分为最大堆和最小堆，通常用完全二叉树，数组的形式存储</p>
 <ul>
 <li>最大堆：父节点的值比每一个子节点的值都要大</li>
 <li>最小堆：父节点的值比每一个子节点的值都要小</li>
 </ul>
 <p>堆属性非常有用，因为堆常常被当做优先队列使用，因为可以快速地访问到“最重要”的元素。</p>
-<p><img src="https://note.youdao.com/yws/res/4700/WEBRESOURCE812496b13ee55bc7381b7c3ba389d3fc" alt="image"></p>
-<p><img src="https://note.youdao.com/yws/res/4701/WEBRESOURCEa0cf2328f9dfb7e481643a9fcd8fecc5" alt="image"></p>
+<p><img src="/../../../images/memory-space/%E5%A0%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%841.jpg" alt="image"></p>
+<p><img src="/../../../images/memory-space/%E5%A0%86%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%842.jpg" alt="image"></p>
 <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>JavaScript中的队列是一种数据结构，遵循<code>先进先出（FIFO）</code>的原则。队列通常用于存储一系列需要按顺序处理的数据。</p>
-<p><img src="https://note.youdao.com/yws/res/4707/WEBRESOURCE7693ebbdcf9b4c2426be98d38ea9c32e" alt="image"></p>
+<p><img src="/../../../images/memory-space/%E9%98%9F%E5%88%97%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" alt="image"></p>
 <p>不同的数据结构的优缺点，以及什么时候应该用哪种数据结构，这里就不过多的描述，接下来进入正题</p>
 <h2 id="JS-数据类型"><a href="#JS-数据类型" class="headerlink" title="JS 数据类型"></a>JS 数据类型</h2><blockquote>
 <p>在开始学习理解内存空间之前，我们需要对js的数据类型有一定的了解</p>
@@ -236,14 +236,14 @@
 <li><code>堆（heap）</code>：堆是用来存储动态分配的内存，主要用于存储对象和复杂数据结构。在堆中分配的内存不会自动释放，需要通过垃圾回收机制来进行管理。</li>
 <li><code>栈（stack）</code>：栈用于存储执行上下文和基本数据类型的值。每当调用函数时，会创建一个新的执行上下文，并将其推入栈中；函数执行完毕后，执行上下文从栈顶弹出。基本数据类型的值（如数字、布尔值、undefined等）直接存储在栈中。</li>
 </ul>
-<p><img src="https://note.youdao.com/yws/res/4650/2F6E1B3F8EF247DFAFA89C563E2ED361" alt="image"></p>
+<p><img src="/../../../images/memory-space/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.jpg" alt="image"></p>
 <p>在创建变量过程中，会为栈中的变量创建一个特殊的对象：<code>变量对象</code></p>
 <p><code>基础类型</code>：都是按值访问，所以可以直接修改变量中的实际的值。<br><code>引用类型</code>：当将一个引用类型的值赋给另一个变量时，实际上是将引用（内存地址）复制到新变量上。</p>
 <p>这里可能会比较疑惑，那么我们将会使用一些例子说明</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1 = <span class="number">1</span>; <span class="comment">// 变量对象</span></span><br><span class="line"><span class="keyword">var</span> a2 = <span class="string">&#x27;string&#x27;</span>; <span class="comment">// 变量对象</span></span><br><span class="line"><span class="keyword">var</span> a3 = <span class="literal">null</span> <span class="comment">// 变量对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a4 = &#123; <span class="attr">name</span>: <span class="string">&#x27;Sunny&#x27;</span> &#125; <span class="comment">// 变量a4存在于变量对象中，&#123; name: &#x27;Sunny&#x27; &#125; 存在于堆内存中</span></span><br><span class="line"><span class="keyword">var</span> a5 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">//  // 变量a5存在于变量对象中，[1, 2, 3] 存在于堆内存中</span></span><br></pre></td></tr></table></figure>
 
 <p>当我们访问堆内存中的数据时，实际上我们首先是从变量对象中获取了该对象的地址引用（或者地址指针），然后再从堆内存中取得我们需要的数据。</p>
-<p><img src="https://note.youdao.com/yws/res/4712/WEBRESOURCEb59aa0bf1c99934ef7951ba11338f544" alt="image"></p>
+<p><img src="/../../../images/memory-space/%E4%BE%8B%E5%AD%901.png" alt="image"></p>
 <p>看到这里是否理解了栈&#x2F;堆，我们来点案例验证一下</p>
 <ul>
 <li>案例1</li>
@@ -251,7 +251,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&#x27;this is string&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">b = <span class="string">&#x27;javascript&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a是什么，b是什么?</span></span><br></pre></td></tr></table></figure>
 
 <p>在变量对象中的数据发生复制行为时，系统会自动为新的变量分配一个新值，他们是相互独立互不影响的值了。具体如图。所以我们修改了 b 的值以后，a 的值并不会发生变化。</p>
-<p><img src="https://note.youdao.com/yws/res/4720/WEBRESOURCE23d955b148e2a7734d03a8d772383989" alt="image"></p>
+<p><img src="/../../../images/memory-space/%E4%BE%8B%E5%AD%902.png" alt="image"></p>
 <ul>
 <li>案例2</li>
 </ul>
@@ -259,7 +259,7 @@
 
 <p>在这个案例中，由于obj是引用类型，所以obj的值是其实是一个地址指针，当发生复制行为时，虽然系统会创建一个新的变量对象，但是它的值依然是一个地址指针，当地址指针相同时，尽管它们相互独立，但是在变量对象中访问到的具体对象实际上是同一个</p>
 <p>所以当修改了newObj的值，obj的值也会发生变化，具体如图</p>
-<p><img src="https://note.youdao.com/yws/res/4728/WEBRESOURCEbf8ad3502385e9330ceba73d7c0de5a6" alt="image"></p>
+<p><img src="/../../../images/memory-space/%E4%BE%8B%E5%AD%903.png" alt="image"></p>
 <h2 id="内存生命周期"><a href="#内存生命周期" class="headerlink" title="内存生命周期"></a>内存生命周期</h2><p>不管什么程序语言，内存生命周期基本是一致的：</p>
 <ol>
 <li>分配你所需要的内存</li>
@@ -318,11 +318,11 @@
     
 <nav class="article-nav">
   
-    <a href="/2024/04/23/html/common-tags/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/04/23/css/common-css/" id="article-nav-newer" class="article-nav-link-wrap">
       <div class="article-nav-caption">下一篇</div>
       <div class="article-nav-title">
         
-          HTML 标签
+          常用css属性
         
       </div>
     </a>
@@ -394,11 +394,11 @@
       <ul>
         
           <li>
-            <a href="/2024/04/23/css/common-css/">常用css属性</a>
+            <a href="/2024/04/23/html/common-tags/">HTML 标签</a>
           </li>
         
           <li>
-            <a href="/2024/04/23/html/common-tags/">HTML 标签</a>
+            <a href="/2024/04/23/css/common-css/">常用css属性</a>
           </li>
         
           <li>
